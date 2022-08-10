@@ -26,7 +26,11 @@
 
         <lightning-layout-item size="12">
             <div>Upcoming</div>
-            <template for:each={todos} for:item="todo">
+            <template for:each={upcomingTask} for:item="todo">
+                <c-todo-item key={todo.todoId}></c-todo-item>
+            </template>
+            <div>Completed</div>
+            <template for:each={completedTask} for:item="todo">
                 <div class="item-class" key={todo.todoId}>
                         <span class="slds-text-heading_label">{todo.todoName}</span>
                         <lightning-button-icon icon-name="utility:check" class="slds-p-horizontal_medium"
